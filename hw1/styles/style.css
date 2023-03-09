@@ -1,85 +1,95 @@
 body {
-    background-image: linear-gradient(to right, rgb(16, 1, 82), rgba(255, 255, 255, 0));
+    background-color: rgb(47, 47, 49);
+}
+
+.top {
+    height: 4rem;    
+    position: sticky;
+    top: 0;
+    background-color: rgb(47, 47, 49);
+}
+
+.top-flex-nav {
+    display: flex;
+    float: right;
+    background-color: rgb(47, 47, 49);
+    list-style: none;
+    margin: 0;
+}
+
+.top-a {
+    color: snow;
+    display: block;
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: "Times New Roman";
+}
+
+.top-a-home {
+    color: salmon;
+    display: block;
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: "Times New Roman";
+}
+
+.block {
+    height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .frame {
-    border: 2px solid rgb(174, 145, 240);
-    margin: auto;
-    background-color: rgb(47, 47, 49);
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image {
-    width: 100%;
+    width: 25%;
+    border-radius:50%;
+    display: block;
     margin: auto;
-}
-
-.singer {
-    color: snow;
-    font-family: "Times New Roman";
-    font-size: 1.5vw;
     text-align: center;
 }
 
-.song {
+.name {
     color: snow;
+    padding: auto;
     font-family: "Times New Roman";
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 3rem;
     text-align: center;
 }
 
-.controlBot {
+.pos {
+    color: snow;
+    font-family: "Times New Roman";
+    font-size: 2rem;
+    text-align: center;
+}
+
+.link {
+    height: 4rem;
+    background-color: rgb(47, 47, 49);
+}
+
+.link-block {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.but {
-    height: 3vw;
-    width: 3vw;
-    border-radius: 1.5vw;
-    color: black;
+.link-flex-nav {
+    display: flex;
+    background-color: rgb(47, 47, 49);
+    list-style: none;
+    margin: 0;
 }
 
-#header{
-    background-color:#FFD4D4;
-    height:80px;
-    text-align:center;
-    line-height:80px;
-}
-
-#sidebar_left{
-    background-color:#FFECC9;
-    width:120px;
-    height:400px;
-    text-align:center;
-    line-height:400px;
-    float:left;
-}
-
-#sidebar_right{
-    background-color:#FFECC9;
-    width:120px;
-    height:400px;
-    text-align:center;
-    line-height:400px;
-    float:right;
-}
-
-#content{
-    margin-left:120px;
-    margin-right:120px;
-    height:400px;
-    background-color:#F2FFF2;
-    text-align:center;
-    line-height:400px;
-}
-
-#footer{
-    clear:both;
-    background-color:#FFD4D4;
-    height:80px;
-    text-align:center;
-    line-height:80px;
+.title {
+    color: snow;
 }
