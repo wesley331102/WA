@@ -1,0 +1,143 @@
+body {
+    background-color: rgb(47, 47, 49);
+}
+
+.top {
+    height: 4rem;    
+    position: sticky;
+    top: 0;
+    background-color: rgb(47, 47, 49);
+}
+
+.top-flex-nav {
+    display: flex;
+    float: right;
+    background-color: rgb(47, 47, 49);
+    list-style: none;
+    margin: 0;
+}
+
+.top-a {
+    color: snow;
+    display: block;
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: "Times New Roman";
+}
+
+.top-a-home {
+    color: salmon;
+    display: block;
+    overflow: hidden;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: "Times New Roman";
+}
+
+.block {
+    height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frame {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    width: 25%;
+    border-radius:50%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.name {
+    color: snow;
+    padding: auto;
+    font-family: "Times New Roman";
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.pos {
+    color: snow;
+    font-family: "Times New Roman";
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cont {
+    color: snow;
+    font-family: "Times New Roman";
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.link {
+    height: 4rem;
+    background-color: rgb(47, 47, 49);
+}
+
+.link-block {
+    display: flex;
+    justify-content: center;
+}
+
+.link-flex-nav {
+    display: flex;
+    background-color: rgb(47, 47, 49);
+    list-style: none;
+    margin: 0;
+}
+
+.title {
+    color: snow;
+    text-align: center;
+}
+
+.content-block {
+    width: 65vw;
+    background: snow;
+    border-top: solid 0.6rem antiquewhite;
+    border-left: solid 1rem gray;
+    border-bottom: solid 0.4rem antiquewhite;
+    font-size: large;
+}
+
+.content-block-center {
+    text-align: center;
+    font-size: larger;
+    font-weight:bold;
+}
+
+.edu-style {
+    list-style-image: url("../src/img/icons8-student-center-24.png");
+}
+
+.act-style {
+    list-style-image: url("../src/img/icons8-events-24.png");
+}
+
+.pro-style {
+    list-style-image: url("../src/img/icons8-project-management-24.png");
+}
+
+.ind-style {
+    list-style-image: url("../src/img/icons8-blueprint-24.png");
+}
+
+.int-style {
+    list-style-image: url("../src/img/icons8-internship-24.png");
+}
+
+.nor-list {
+    list-style-image: none;
+    list-style-type: circle;
+}
