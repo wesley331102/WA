@@ -2,6 +2,42 @@ body {
     background-color: rgb(47, 47, 49);
 }
 
+#main-page {
+    display: block;
+}
+
+#education-page {
+    display: none;
+}
+
+#portfolio-page {
+    display: none;
+}
+
+#delicacy-page {
+    display: none;
+}
+
+#main-but {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#education-but {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#portfolio-but {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#delicacy-but {
+    font-weight: normal;
+    cursor: pointer;
+}
+
 .top {
     height: 4rem;    
     position: sticky;
@@ -38,7 +74,7 @@ body {
 }
 
 .block {
-    height: 10vh;
+    height: 5vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -55,6 +91,7 @@ body {
     display: block;
     margin: auto;
     text-align: center;
+    cursor: pointer;
 }
 
 .name {
@@ -140,4 +177,21 @@ body {
 .nor-list {
     list-style-image: none;
     list-style-type: circle;
+}
+
+.flex-container {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.food-image {
+    border-radius: 10px;
+    width: 25vw;
+    margin: auto;
+}
+
+.but {
+    margin: auto;
 }
