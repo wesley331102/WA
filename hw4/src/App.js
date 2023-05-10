@@ -1,20 +1,53 @@
 import './App.css';
-import { Avatar, Card, Anchor, Col, Row } from 'antd';
+import { Avatar, Card, Anchor, Col, Row, Button, Input, Space, message } from 'antd';
 import { FacebookOutlined, InstagramOutlined , LinkedinOutlined, GithubOutlined} from '@ant-design/icons';
 import chImage from './img/ch.jpg'
-import { getUrl, startGame, restart } from './axios'
+import { getUrl, guess } from './axios'
 import { useState } from 'react'
 
-const { Meta } = Card;
-
-function handerClickImage(href) {
-  window.open(href, '_blank').focus();
-}
-
-
 function App() {
-  const [type, setType] = useState('')
   
+  const { Meta } = Card;
+
+  const [messageApi, contextHolder] = message.useMessage();
+  
+  const [notRobot, setNotRobot] = useState(false)
+  const [number, setNumber] = useState('')
+
+  const success = (msg) => {
+    messageApi.open({
+      type: 'loading',
+      content: msg,
+    });
+  };
+
+  const error = (msg) => {
+    messageApi.open({
+      type: 'error',
+      content: msg,
+    });
+  };
+  
+  const warning = (msg) => {
+    messageApi.open({
+      type: 'warning',
+      content: msg,
+    });
+  };
+
+  const handleGuess = async () => {
+    let stat = await guess(number)
+    if (stat.type === 'correct'){
+      success(stat.msg)
+      await new Promise(r => setTimeout(r, 3000));
+      setNotRobot(true)
+    } else if (stat.type === 'warning'){
+      warning(stat.msg)
+    } else{
+      error(stat.msg)
+    }
+  }
+
   const handleGetFbUrl = async () => {
     let href = await getUrl("fb")
     window.open(href, '_blank').focus();
@@ -35,7 +68,63 @@ function App() {
     window.open(href, '_blank').focus();
   }
 
-  return (
+  const test = (
+    <>
+      {contextHolder}
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          textAlign: 'center',
+          background: 'slateblue',
+        }}
+      >
+        <Row
+          style={{
+            height: 600,
+            justifyContent: "center"
+          }}
+        >
+          <Col
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flex: 1
+            }}
+          >
+            <Card 
+              title="I am not a robot"
+              style={{
+                width: 600,
+              }}
+            >
+              <Card type="inner" title="Guess a number from 1 to 100">
+                <Space.Compact
+                  style={{
+                    width: '100%',
+                  }}
+                >
+                  <Input
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
+                  />
+                  <Button 
+                    type="primary" 
+                    onClick={handleGuess}
+                    disabled={!number}>
+                      Guess
+                  </Button>
+                </Space.Compact>
+              </Card>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </>
+  )
+
+  const content = (
     <>
       <div className='nav-bar'>
         <Anchor
@@ -258,6 +347,10 @@ function App() {
         </div>
       </div>
     </>
+  )
+
+  return (
+    <>{notRobot ? content : test}</>
   );
 }
 
