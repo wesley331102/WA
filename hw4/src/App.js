@@ -2,6 +2,8 @@ import './App.css';
 import { Avatar, Card, Anchor, Col, Row } from 'antd';
 import { FacebookOutlined, InstagramOutlined , LinkedinOutlined, GithubOutlined} from '@ant-design/icons';
 import chImage from './img/ch.jpg'
+import { getUrl, startGame, restart } from './axios'
+import { useState } from 'react'
 
 const { Meta } = Card;
 
@@ -9,7 +11,30 @@ function handerClickImage(href) {
   window.open(href, '_blank').focus();
 }
 
+
 function App() {
+  const [type, setType] = useState('')
+  
+  const handleGetFbUrl = async () => {
+    let href = await getUrl("fb")
+    window.open(href, '_blank').focus();
+  }
+
+  const handleGetIgUrl = async () => {
+    let href = await getUrl("ig")
+    window.open(href, '_blank').focus();
+  }
+
+  const handleGetLinkUrl = async () => {
+    let href = await getUrl("link")
+    window.open(href, '_blank').focus();
+  }
+
+  const handleGetGitUrl = async () => {
+    let href = await getUrl("git")
+    window.open(href, '_blank').focus();
+  }
+
   return (
     <>
       <div className='nav-bar'>
@@ -75,10 +100,10 @@ function App() {
                   />
                 }
                 actions={[
-                  <FacebookOutlined key="fb" onClick={()=>{handerClickImage("https://www.facebook.com/profile.php?id=100003010495357")}} />,
-                  <InstagramOutlined key="ig" onClick={()=>{handerClickImage("https://www.instagram.com/ye110w_chi_red/")}} />,
-                  <LinkedinOutlined key="link" onClick={()=>{handerClickImage("https://www.linkedin.com/in/%E5%95%9F%E5%AE%8F-%E9%BB%83-a0b6b8240/")}} />,
-                  <GithubOutlined key="git" onClick={()=>{handerClickImage("https://github.com/wesley331102")}} />
+                  <FacebookOutlined key="fb" onClick={handleGetFbUrl} />,
+                  <InstagramOutlined key="ig" onClick={handleGetIgUrl} />,
+                  <LinkedinOutlined key="link" onClick={handleGetLinkUrl} />,
+                  <GithubOutlined key="git" onClick={handleGetGitUrl} />
                 ]}
               >
                 <Meta
