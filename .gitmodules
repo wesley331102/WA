@@ -1,0 +1,3 @@
+[submodule "WAproject"]
+	path = WAproject
+	url = https://github.com/wesley331102/WAproject.git
